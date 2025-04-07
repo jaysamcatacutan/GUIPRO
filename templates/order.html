@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Order Croissants</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Place Your Order</h1>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/menu">Menu</a>
+            <a href="/order">Order</a>
+        </nav>
+    </header>
+    <div class="container">
+        <form action="/order" method="POST">
+            <label>Your Name:</label><br>
+            <input type="text" name="name" required><br><br>
+
+            <label>Your Email:</label><br>
+            <input type="email" name="email" required><br><br>
+
+            <label>Choose Croissant:</label><br>
+            <select name="croissant" required>
+                <option>Classic Butter</option>
+                <option>Chocolate</option>
+                <option>Almond</option>
+                <option>Strawberry Cream</option>
+            </select><br><br>
+
+            <label>Quantity:</label><br>
+            <input type="number" name="quantity" min="1" required><br><br>
+
+            <label>Message (optional):</label><br>
+            <textarea name="message"></textarea><br><br>
+
+            <button type="submit">Submit Order</button>
+        </form>
+    </div>
+</body>
+</html>

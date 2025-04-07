@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Thank You</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Thank You! 🥐</h1>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/menu">Menu</a>
+            <a href="/order">Order</a>
+        </nav>
+    </header>
+    <div class="container">
+        <h2>Your order has been received!</h2>
+        <p><strong>Name:</strong> {{ name }}</p>
+        <p><strong>Email:</strong> {{ email }}</p>
+        <p><strong>Croissant:</strong> {{ croissant }}</p>
+        <p><strong>Quantity:</strong> {{ quantity }}</p>
+        {% if message %}
+        <p><strong>Message:</strong> {{ message }}</p>
+        {% endif %}
+    </div>
+</body>
+</html>
